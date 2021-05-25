@@ -15,11 +15,11 @@ function find_dir_owner() {
           )
         # If no files, then no assignment and return.
         if [ ${nf} -eq 0 ]; then
-                echo "# /${df}/"
+                echo "# ${df}"
                 return
         fi
                 
-        echo -n "/${df}/ "
+        echo -n "${df}/* "
         find ${d} -maxdepth 1 -mindepth 1 -type f -not -size 0 -not -path "*/\.*" | \
                 `# take only file with specified extensions` \
                 grep -E "$FILE_EXT" | \
