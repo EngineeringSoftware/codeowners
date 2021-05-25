@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE_EXT=".cmake$|.cpp$|.csv$|.h$|.md$|.py$|.pyx$|.sh$|.txt$|.yaml$|.yml$|.ipynb$"
+FILE_EXT=".cmake$|.cpp$|.csv$|.h$|.md$|.py$|.pyx$|.sh$|.txt$|.yaml$|.yml$|.ipynb$|.go$"
 
 function find_dir_owner() {
         local d="${1:-.}"; shift
@@ -37,7 +37,7 @@ function find_owners_for_repo() {
         local repo="${1:-.}"
 
         ( cd ${repo}
-          for d in $(find . -type d -not -path '*/\.*'); do
+          for d in $(find . -type d -not -path '*/\.*' | sort); do
                   find_dir_owner "${d}"
           done
         )
