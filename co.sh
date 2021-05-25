@@ -34,10 +34,11 @@ function find_dir_owner() {
 }
 
 function find_owners_for_repo() {
-        local repo="${1:-.}"
+        local repo="${1:-.}"; shift
+        local ignorep="${1:-PATTERN}"; shift
 
         ( cd ${repo}
-          for d in $(find . -type d -not -path '*/\.*' | sort); do
+          for d in $(find . -type d -not -path '*/\.*' | grep -Ev "${ignorep}" | sort); do
                   find_dir_owner "${d}"
           done
         )
@@ -55,5 +56,5 @@ elif [ ! -d "${repo}" ]; then
         exit 2
 fi
 
-find_owners_for_repo "${repo}"
+find_owners_for_repo "${repo}" "${2}"
 #find_dir_owner "."
