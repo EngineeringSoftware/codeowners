@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE_EXT=".cmake$|.cpp$|.csv$|.h$|.md$|.py$|.pyx$|.sh$|.txt$|.yaml$|.yml$|.ipynb$|.go$|.tf$"
+FILE_EXT=".cmake$|.cpp$|.csv$|.h$|.md$|.py$|.pyx$|.sh$|.txt$|.yaml$|.yml$|.ipynb$|.go$|.tf$|.inc$|.html$|.mod$|.rst$"
 
 function find_dir_owner() {
         local d="${1:-.}"; shift
