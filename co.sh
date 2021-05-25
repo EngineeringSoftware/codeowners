@@ -2,7 +2,7 @@
 
 # https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-code-owners
 
-FILE_EXT=".cmake$|.cpp$|.csv$|.h$|.md$|.py$|.pyx$|.sh$|.txt$|.yaml$|.yml$|.ipynb$|.go$|.tf$|.inc$|.html$|.mod$|.rst$"
+FILE_EXT=".cmake$|.cpp$|.csv$|.h$|.md$|.py$|.pyx$|.sh$|.txt$|.yaml$|.yml$|.ipynb$|.go$|.tf$|.inc$|.html$|.mod$|.rst$|.pxd$|.cu$|.hh$|.Dockerfile$|.in$"
 
 function find_dir_owner() {
         local d="${1:-.}"; shift
